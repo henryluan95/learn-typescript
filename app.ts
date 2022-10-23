@@ -1,14 +1,15 @@
-enum Role {
-  ADMIN,
-  READ_ONLY,
-  AUTHOR,
+let userInput: unknown;
+let userName: string;
+
+userInput = 5;
+userName = "Max";
+
+if (typeof userInput === "string") {
+  userName = userInput;
 }
 
-const person = {
-  name: "Henry",
-  age: 30,
-  hobbies: ["eat", "sleep", "laugh"],
-  role: Role.ADMIN,
-};
+function generateError(message: string, code: number): never {
+  throw { message: message, errorCode: code };
+}
 
-console.log(person.name);
+generateError("An error occurred", 500);
